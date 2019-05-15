@@ -1,13 +1,24 @@
 package kalog.com.vn;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.*;
 
 public class BarrierInAction {
     public static void main(String[] args) {
 
+//        Map<String, String> map = new HashMap<>();
+//        map.put(null, "123");
+//        map.put(null, null);
+//        System.out.println(map.get(null));
+        List<String> list = new ArrayList<>();
+        list.add(null);
+//        System.out.println(list.get(0));
+        list.stream().map(s -> {System.out.println(s);return s;}
+        );
+        Set<String> set = new HashSet<>();
+        set.add(null);
+        set.stream().map(s -> {System.out.println(s);return s;}
+        );
         class Friend implements Callable<String> {
             private CyclicBarrier barrier;
 
